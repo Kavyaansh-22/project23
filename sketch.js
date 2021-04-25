@@ -98,7 +98,7 @@ function keyPressed(){
 	}
 	if(keyCode ===  RIGHT_ARROW){
 		helicopterSprite.x=helicopterSprite.x+4.5;
-		translation={x:4.5,y=0}
+		translation={x:4.5,y:0}
 		Matter.Body.translate(packageBody,translation)
 	}
 	
