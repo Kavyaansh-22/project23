@@ -75,31 +75,12 @@ function draw() {
   background(0);
  
 
-  
-
-  
-  if(keyCode ===  LEFT_ARROW){
-	helicopterSprite.x=helicopterSprite.x-4.5;
-}
-if(keyCode ===  RIGHT_ARROW){
-	helicopterSprite.x=helicopterSprite.x+4.5;
-}
-
-
-Matter.Body.translate(packageBody , {x:helicopterSprite.x,y:0});
-if(keyCode === DOWN_ARROW){
-	Matter.Body.setStatic(packageBody,false);
-
-}
+  packageSprite.x = packageBody.position.x;
+  packageSprite.y = packageBody.position.y;
 
   
 
-
-  packageSprite.x= packageBody.position.x 
-  packageSprite.y= packageBody.position.y 
-
-  
-
+  keyPressed();
 
 
 
@@ -108,3 +89,25 @@ if(keyCode === DOWN_ARROW){
   
  
 }
+function keyPressed(){
+	
+	if(keyCode ===  LEFT_ARROW){
+		helicopterSprite.x=helicopterSprite.x-4.5;
+		translation={x:-4.5,y:0}	
+		Matter.Body.translate(packageBody,translation)
+	}
+	if(keyCode ===  RIGHT_ARROW){
+		helicopterSprite.x=helicopterSprite.x+4.5;
+		translation={x:4.5,y=0}
+		Matter.Body.translate(packageBody,translation)
+	}
+	
+	
+	if(keyCode === DOWN_ARROW){
+		Matter.Body.setStatic(packageBody,false);
+	
+	}
+	
+
+}
+
